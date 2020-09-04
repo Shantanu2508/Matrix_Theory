@@ -1,0 +1,115 @@
+%
+%--------------------------------------------------------
+%  Assignment 1
+%  Shantanu Yadav, EE20MTech12001
+%  IIT Hyderabad
+%--------------------------------------------------------
+%
+%\documentclass[12pt]{IEEEtran}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{listings}
+\lstset{frame=single,breaklines=true,columns=fullflexible}
+
+\textheight=9.5in
+\textwidth=6.0in
+\topmargin=-0.5in
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\thispagestyle{empty}
+
+\begin{document}
+\begin{center}
+	{\large \bf EE5609 ASSIGNMENT 1} \\
+	\vspace{2ex}
+	{\large \bf SHANTANU YADAV, EE20MTECH12001 }\\
+	{\Large \bf IIT Hyderabad} \\ \vspace{2ex}
+\end{center}
+	\hrule
+
+\vspace{2ex}
+\begin{center}
+{\underline{\Large \bf Lines and Planes}}
+\end{center}
+
+%---------------------------------------------------------
+\noindent 
+The python solution code is available at
+\begin{lstlisting}
+	https://github.com/Shantanu2508/Matrix_Theory/blob/master/stline.py
+\end{lstlisting}
+%---------------------------------------------------------
+
+\section*{Problem Statement}
+Find the equations of the lines which intercepts on the both the axes and whose sum and product are 1 and -6 respectively.
+
+\section*{Solution}
+The equation of line in terms of vector notations can be written as
+\begin{align}
+	{\mathbf{n}^T}{\mathbf x} = b     \qquad \text{ where } \qquad 
+	\mathbf{n} = \myvec{n_{11} \\  n_{12}}, 
+\end{align}
+	or
+\begin{align}
+	\myvec{n_{11} &  n_{12}} \mathbf{x} = b	\label{eq2}
+\end{align}
+Let the intercepts be $\myvec{a \\ 0}$ and $\myvec{0 \\ b}$, respectively.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{stline_plot.png}
+\caption{}
+\end{figure}
+
+\noindent
+Given that: \qquad \quad $ a + b = 1 $, \qquad and \qquad \quad $ ab = -6$ \\
+The quadratic equation whose roots are the x and y intercepts can be written 
+as :
+\begin{equation*}
+	x^2 - (\text{sum of roots})x + (\text{product of roots}) = 0
+\end{equation*}
+\begin{equation*}
+	\implies x^2 - x -6 =0
+\end{equation*}
+%\begin{equation*}
+%\implies b = \frac{-6}{a} \  
+%\implies a^2 - a -6 =0
+%\implies (a-3)(a+2)=0
+%\end{equation*}
+\begin{equation}
+	\implies x=(3,-2) \text{ and corresponding y intercepts are  } (-2,3)
+\end{equation}
+
+\noindent
+When the line passes through $\myvec{3 \\ 0}$ and $\myvec{0 \\ -2}$, 
+respectively,
+we get, upon substitution in (\ref{eq2}):
+	\[ 3 n_{11} = b \qquad \implies \qquad n_{11} = \frac{b}{3} \]
+	\[-2 n_{12} = b \qquad \implies \qquad n_{12} =-\frac{b}{2} \]
+Therefore, the equation of first line is
+\begin{align*}
+	\myvec{\frac{b}{3} & \frac{-b}{2} } {\mathbf{x}} = b
+\end{align*}
+%
+$\implies$
+\begin{align}
+	\myvec{ \frac{1}{3} & \frac{-1}{2} } {\mathbf{x}} = 1
+\end{align}
+Similarly, the equation of second line, which passes through 
+$\myvec{ -2 \\ 0}$ and $\myvec{ 0 \\ 3}$ 
+is 
+\begin{align}
+	\myvec{ \frac{-1}{2} & \frac{1}{3} } {\mathbf{x}} = 1
+\end{align}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabularx}{0.7\linewidth}{|c|c|X|X|} \hline 
+	$x-$intercept & $y-$intercept & $n_{11}$ & $n_{12}$ \\ \hline \hline
+		3	&	-2	&	 1/3	&	-1/2 \\ \hline
+  	       -2	&	 3	&	-1/2	&	 1/3 \\ \hline
+	\end{tabularx}
+	\caption{}
+\end{table}
+\end{document}
