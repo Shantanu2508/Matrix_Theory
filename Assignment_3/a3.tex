@@ -123,7 +123,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{EE5609 Assignment 2}
+\title{EE5609 Assignment 3}
 \author{SHANTANU YADAV, EE20MTECH12001 }
 \maketitle
 \newpage
@@ -133,67 +133,52 @@ columns=fullflexible
 
 The python solution code is available at
 \begin{lstlisting}
-https://github.com/Shantanu2508/Matrix_Theory/blob/master/Assignment_2/assignment2.py
+https://github.com/Shantanu2508/Matrix_Theory/blob/master/Assignment_3/assignment3.py
 \end{lstlisting}
 %
 \section{Problem}
-Examine the consistency of the system of the given equations.
+Using properties of determinants, prove that:
 \begin{align}
-	5x -  y + 4z = 5 \nonumber \\
-	2x + 3y + 5z = 2 \\
-	5x - 2y + 6z =-1 \nonumber
+	\mydet{\alpha & \alpha^2 & \beta + \gamma \\ 
+	        \beta & \beta^2 & \gamma + \alpha \\
+		\gamma & \gamma^2 & \alpha + \beta}
+	=
+	(\beta - \gamma)(\gamma - \alpha)(\alpha - \beta)(\alpha + \beta + \gamma)
 \end{align}
 
 \section{Solution}
-	The given equations can be written as
-\begin{align*}
-	\vec{A} \vec{x} = \vec{b}  
-\end{align*}
-where
+Using transformations and properties of determinants:
 \begin{align}
-	\vec{A} = \myvec{ 5 & -1 & 4 \\ 2 &  3 & 5 \\ 5 & -2 & 6 }
-	\quad \text{and} \quad
-	\vec{b} = \myvec{ 5 \\  2 \\ -1}
+	\mydet{ \alpha & \alpha^2 & \beta + \gamma \\
+	\beta & \beta^2 & \gamma + \alpha \\ 
+	\gamma &\gamma^2 & \alpha + \beta}
+	\\
+	\xleftrightarrow[]{C_3 \leftarrow C_1+C_3}
+	\mydet{ \alpha & \alpha^2 &\alpha + \beta + \gamma \\
+	\beta & \beta^2 & \alpha + \beta + \gamma \\
+	\gamma &\gamma^2 & \alpha + \beta + \gamma}
+\\
+	\implies \quad
+	(\alpha+\beta+\gamma)
+	\mydet{ \alpha & \alpha^2 & 1 \\ \beta & \beta^2 & 1 \\ \gamma &\gamma^2 & 1}
+\\
+	\xleftrightarrow[R_2 \leftarrow R_2-R_1]{R_3 \leftarrow R_3-R_1}
+	(\alpha+\beta+\gamma)
+	\mydet{ \alpha & \alpha^2 & 1 \\ \beta-\alpha & \beta^2-\alpha^2 & 0 \\ 
+	\gamma-\alpha &\gamma^2-\alpha^2 & 0}
+%\\
 \end{align}
-By row reducing the augmented matrix :
 \begin{align}
-	\myvec{ 5 & -1 & 4 &\vrule & 5 \\ 2 & 3 & 5 &\vrule & 2 \\ 5 & -2 & 6 &\vrule & -1}
-	\\
-	\xleftrightarrow[R_3 \leftarrow R_3-R_1]{R_2 \leftarrow 5R_2-(R_1+R_3)}
-	\myvec{5 &-1  & 4  &\vrule & 5 \\ 0 & 18 & 15 &\vrule & 6 \\ 0 & -1 & 2 &\vrule & -6}
-	\\
-	\xleftrightarrow[]{R_3 \leftarrow 18R_3+R_2}
-	\myvec{5 & -1 &  4 &\vrule & 5 \\ 0 & 18 & 15 &\vrule & 6 \\ 0 & 0 & 51 &\vrule & -102}
-	\\
-	\xleftrightarrow[]{R_3 \leftarrow \frac{R_3}{51}}
-	\myvec{5 & -1 &  4 &\vrule & 5 \\ 0 & 18 & 15 &\vrule & 6 \\ 0 & 0 & 1 &\vrule & -2}
-	\\
-	\xleftrightarrow[]{R_2 \leftarrow R_2-15 R_3}
-	\myvec{5 & -1 &  4 &\vrule & 5 \\ 0 & 18 & 0 &\vrule & 36 \\ 0 & 0 & 1 &\vrule & -2}
-	\\
-	\xleftrightarrow[]{R_2 \leftarrow \frac{R_2}{18}}
-	\myvec{5 & -1 &  4 &\vrule & 5 \\ 0 & 1 & 0 &\vrule & 2 \\ 0 & 0 & 1 &\vrule & -2}
-\end{align}
-%----------------
-\begin{align}
-	\xleftrightarrow[]{R_1 \leftarrow R_1+R_2-4 R_3}
-	\myvec{5 & 0 &  0 &\vrule & 15 \\ 0 & 1 & 0 &\vrule & 2 \\ 0 & 0 & 1 &\vrule & -2}
-	\\
-	\xleftrightarrow[]{R_1 \leftarrow \frac{R_1}{5}}
-	\myvec{1 & 0 &  0 &\vrule & 3 \\ 0 & 1 & 0 &\vrule & 2 \\ 0 & 0 & 1 &\vrule & -2}
+	\implies \quad
+	(\beta-\alpha)(\gamma-\alpha)(\alpha+\beta+\gamma)
+	\mydet{ \alpha & \alpha^2 & 1 \\ 1 & \beta+\alpha & 0 \\ 1 &\gamma+\alpha & 0}
+\\
+	\implies 
+	(\beta-\alpha)(\gamma-\alpha)(\alpha+\beta+\gamma)(-1)^{1+3}
+	\mydet{ 1 & \beta+\alpha \\ 1 &\gamma+\alpha }
+\\
+	\implies \quad
+	(\alpha-\beta)(\beta-\gamma)(\gamma-\alpha)(\alpha+\beta+\gamma)
 \end{align}
 %----------------
-\begin{align}
-	\implies rank \myvec{ 5 & -1 & 4 \\ 2 &  3 & 5 \\ 5 & -2 & 6 }
-		&=
-	rank \myvec{ 5 & -1 & 4 &\vrule & 5 \\ 2 & 3 & 5 &\vrule & 2 \\ 5 & -2 & 6 &\vrule & -1}
-		\nonumber \\
-	&= 3 = dim \myvec{ 5 & -1 & 4 \\ 2 &  3 & 5 \\ 5 & -2 & 6 }
-\end{align}
-i.e., the $rank(\vec{A}) = rank(\vec{A:b}) = 3$, which is equal to the row size of $\vec{x}$. Hence the system of linear equations is consistent, with a unique solution. 
-
-The unique solution is 
-\begin{align}
-	\vec{x} = \myvec{3\\2\\-2}
-\end{align}
 \end{document}
