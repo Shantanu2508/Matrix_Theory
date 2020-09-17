@@ -1,0 +1,191 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609 Challenge Problem}
+\author{SHANTANU YADAV, EE20MTECH12001 }
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\section{Problem}
+If $x(n)*h_1(n) = y(n)$ and  $x(n)*h_2(n) = y(n)$. 
+Is $h_1(n)=h_2(n)$ ? 
+\section{Relation between convolution and polynomial}
+Let us consider a simple example 
+\begin{align}
+	x[n]=[2,3]\\ 
+	h_1[n]=[4,5] \\
+	h_2[n]=[a,b,c] 
+\end{align}
+From convolution 
+\begin{align}
+	x[n]*h_1[n]=[8,22,15] 
+\end{align}
+Now let us consider 
+\begin{align}
+	x[n] =2x+3 \\
+	h_1[n]=4x+5 \\
+	h_2[n]= ax^2+bx+c
+\end{align}
+Calculating
+\begin{align}
+	x[n]\times h_1[n] = (2x+3)(4x+5) = 8x^2 + 22x + 15
+\end{align}
+This is an important result  which shows that coefficients of polynomial are the weights of 
+convolution operation. \\
+Now,
+\begin{align}
+	x[n] \times h_2[n]=2ax^3+(2b+3a)x^2+(2c+3b)x+3c 
+\end{align}
+If there exists $h_2[n]$ such that 
+\begin{align}
+	x[n]*h_2[n] = x[n]*h_1[n]
+\end{align}
+then, on comparision 
+\begin{align}
+	a=0; \ b=4; \ c=5 \\
+	h_2[n] = 4x+5
+\end{align}
+
+\section{Generalizing the Result}
+	Let $x[n]$, $h[n]$, $h_2[n]$ be represented as polynomials of degree $n$, $m$ and $p$ respectively.
+	\begin{align}
+		x(n)=(c_0 + c_1x)^n \\
+		h_1(n)=(a_0 + a_1x)^m \\
+		h_2(n)=(b_0 + b_1x)^p
+	\end{align}
+	From binomial theorem and relation between convolution operation and polynomial coefficients
+	\begin{align}
+		x(n) \times h_1(n) = \binom{n}{j} \binom{m}{j}c_1^ic_0^{n-i}a_1^{j}a_0^{m-j}x^{i+j} \\
+	        x(n) \times h_2(n) = \binom{n}{j} \binom{p}{k}c_1^ic_0^{n-i}b_1^{k}b_0^{p-k}x^{i+k} \\
+	\end{align}
+	Both the equations are equal iff
+	\begin{align}
+		\binom{m}{j}a_1^{j}a_0^{m-j}=\binom{p}{k}b_1^{k}b_0^{p-k} \\
+		\implies \quad m=p ; \ a_1 = b_1 ; \ a_0 = b_0 ; \\
+		\implies \quad h_1(n) = h_2(n)
+	\end{align}
+\end{document}
