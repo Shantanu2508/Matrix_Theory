@@ -133,16 +133,15 @@ columns=fullflexible
 
 The python solution code is available at
 \begin{lstlisting}
-https://github.com/Shantanu2508/Matrix_Theory/blob/master/Assignment_5/assignment5.py
+https://github.com/Shantanu2508/Matrix_Theory/blob/master/Assignment_5/assignment5part2.py
 \end{lstlisting}
 
 \section{Problem}
-Find the value of $k$ so that the following equation may represent pairs of straight lines.
+Prove that the equation
 \begin{align*}
-	12x^2 + xy -6y^2 -29x +8y +k =0 
+	12x^2 + 7xy -10y^2 +13x +45y -35 =0 
 \end{align*}
-Also, find the equations of the lines.
-
+represents two straight lines and find the angle between the lines.
 \section{Explanation}
 The general equation of second degree is given by
 \begin{align}
@@ -169,62 +168,98 @@ The lines intercept if
 \section{Solution}
 From (\ref{eq3}) and (\ref{eq4})
 \begin{align}
-	\vec{V}=\vec{V}^T &= \myvec{12 & \frac{1}{2} \\ \frac{1}{2} & -6} \\
-	\vec{u} &= \myvec{\frac{29}{2} \\ 4}
+	\vec{V}=\vec{V}^T &= \myvec{12 & \frac{7}{2} \\ \frac{7}{2} & -10} \\
+	\vec{u} &= \myvec{\frac{13}{2} \\ \frac{45}{2}} \\
+	 f=-35
 \end{align}
 From (\ref{eq1}) and (\ref{eq5})
 \begin{align}
-	& \mydet{12 & \frac{1}{2} & -\frac{29}{2} \\ 
-	       \frac{1}{2} & -6 & 4     \\
-	       -\frac{29}{2} & 4 & k } = 0 \\  \nonumber \\
-	 \implies \quad 12\mydet{-6 & 4 \\ 4 & k} &-\frac{1}{2}\mydet{\frac{1}{2} & 4 \\ 
-	 				-\frac{29}{2} & k}
-	-\frac{29}{2}\mydet{\frac{1}{2} & -6 \\ -\frac{29}{2} & 4} = 0 \\
-	 \implies \quad & k =14
+	\mydet{\vec{V} & \vec{u} \\ \vec{u}^T & f} 
+		&= \mydet{12 & \frac{7}{2}  & \frac{13}{2} \\ 
+	        \frac{7}{2} & -10 & \frac{45}{2}     \\
+	       \frac{13}{2} & \frac{45}{2} & -35 }  \\
+	       		\nonumber \\
+	\implies \ 12\mydet{-10 & \frac{45}{2} \\ \frac{45}{2} & -35} 
+		& -\frac{7}{2}\mydet{\frac{7}{2} & \frac{45}{2} \\ \frac{13}{2} & -35} 
+		+\frac{13}{2}\mydet{\frac{7}{2} & -10 \\ \frac{13}{2} & \frac{45}{2}} = 0 \label{eq10}\\
+	& \mydet{\vec{V}}=-\frac{529}{4} < 0 \label{eq11}
 \end{align}
-Since $ \vec{V} = \vec{V}^T $, there exists an orthogonal matrix $\vec{P}$ such that
+From (\ref{eq10}) and (\ref{eq11}) it can be concluded that the given equation represents a pair of intersecting lines.
+Let the equations of lines be
 \begin{align}
-	\vec{P}\vec{V}\vec{P}^T = \vec{D} = diag\myvec{\lambda_1 & \lambda_2}
+	\vec{n_1}^T \vec{x}=c_1 \\
+	\vec{n_2}^T \vec{x}=c_2 
 \end{align}
-or equivalently 
+Since (\ref{eq2}) represents a pair of straight lines it must satisfy
 \begin{align}
-	\vec{V} = \vec{P}\vec{D}\vec{P}^T
+	(\vec{n_1}^T \vec{x} - c_1)(\vec{n_1}^T \vec{x} - c_1) =
+        \vec{x}^{T}\vec{Vx} + 2\vec{u}^{T}\vec{x} + f=0
 \end{align}
-Eigen vectors of real symmetric matrix $\vec{V}$ are orthogonal. The characteristic equation of $\vec{V}$ is obtained by evaluating the determinant
+where
 \begin{align}
-	\mydet{\lambda\vec{I}-\vec{V}} = \mydet{\lambda-12 & -\frac{1}{2} \\ -\frac{1}{2} & \lambda +6} = 0 \\
-	\implies \quad \lambda^2-6\lambda-\frac{289}{4}=0 \\
-	\implies \quad \lambda_1=-\frac{483}{72},\lambda_2=\frac{865}{72}
+	\vec{n_1}*\vec{n_2}=\myvec{a\\2b\\c}=\myvec{12\\7\\-10} \label{eq6} \\ 
+	c_2\vec{n_1}+c_1\vec{n_2}=-2\vec{u} \label{eq9}\\
+	c_1c_2=f
 \end{align}
-The eigen vector $\vec{p}$ is defined as
+Slopes of the lines can be obtained by solving 
 \begin{align}
-	\vec{V}\vec{p}=\lambda\vec{p} \\
-	\implies (\lambda\vec{I} - \vec{V})\vec{p}=0
+	cm^2+2bm+a=0 \\
+	-10m^2+7m+12=0 \\
+	\implies m_1 = \frac{-4}{5}, m_2 = \frac{3}{2}
 \end{align}
-The orthogonal eigen-vector matrix
+The normal vectors can be expressed in terms of corresponding slopes of lines as
 \begin{align}
-	\vec{P}=\frac{1}{\norm{\vec{p}}}\myvec{\vec{p_1} & \vec{p_2}}
-	=\myvec{\frac{24}{865} & \frac{-2596}{2597} \\  & \\ 
-	-\frac{2596}{2597} & \frac{24}{865}} \\  \nonumber \\
-	\vec{D}=\myvec{-\frac{433}{72} & 0 \\ & \\ 0 & \frac{865}{72}}
+	\vec{n}=k\myvec{-m\\1} \\
+	\implies
+	\vec{n_1}=k_1\myvec{\frac{4}{5} \\ 1}  \label{eq7} \\
+	\vec{n_2}=k_2\myvec{-\frac{3}{2} \\ 1}  \label{eq8}
 \end{align}
-Let $\vec{x}=\vec{P}\vec{y} + \vec{c} $ with $\vec{c}=-\vec{V}^{-1}\vec{u}$. Substituting in (\ref{eq2})
+Substituing (\ref{eq7}) and (\ref{eq8}) in (\ref{eq6}) we get
 \begin{align}
-	\vec{y}^T\vec{D}\vec{y}=\vec{u}^T\vec{V}^{-1}\vec{u}-f \\
-	\implies \quad \vec{y}^T\vec{D}\vec{y}=0 \\
-	\implies \quad \myvec{\pm\sqrt{\frac{\lambda_1}{\lambda_2}} & 1}\vec{y}=0   \label{eq6}
+	k_1k_2=-10
 \end{align}
-Substituting $\vec{y}=\vec{P}^T\vec{x} - \vec{P}^T\vec{c}$ in (\ref{eq6}) 
+Assuming $ k_1=5$ and $k_2 =-2$
 \begin{align}
-	\implies \quad \myvec{\pm{\frac{1}{\sqrt{2}}} & 1}(\vec{\vec{P}^T\vec{x}-\vec{P}^T\vec{c}})=0 
+	\vec{n_1}=\myvec{4\\5}, \vec{n_2}=\myvec{3\\-2}
 \end{align}
-The equations of lines are 
+Verification using Toeplitz matrix
 \begin{align}
-	\myvec{\frac{49}{50} & \frac{37}{50}}\vec{x} = \frac{343}{200} \\
-	\myvec{\frac{51}{50} & -\frac{34}{50}}\vec{x} = \frac{34}{50} 
+\vec{n_1}*\vec{n_2}=\myvec{4 & 0 \\ 5 & 4 \\0 & 5}\myvec{3\\-2}=\myvec{12\\7\\-10}
+\end{align}
+From (\ref{eq9}) we have
+\begin{align}
+	c_2\myvec{4\\5}+c_1\myvec{3\\-2}=\myvec{-13\\-45}
+\end{align}
+Solving the augmented matrix
+\begin{align}
+	\myvec{4 & 3 & -13 \\ 5 & -2 & -45}
+	\xleftrightarrow[]{R_2 \leftarrow 4R_2-5R_1}
+	\myvec{4 & 3 & -13 \\ 0 & -23 & -115}\\
+	\xleftrightarrow[]{R_2 \leftarrow -\frac{R_2}{23}}
+        \myvec{4 & 3 & -13 \\ 0 & 1 & 5}
+        \xleftrightarrow[]{R_1 \leftarrow R_1-3R_2}
+	\myvec{4 & 0 & -28 \\ 0 & 1 & 5}\\
+	\xleftrightarrow[]{R_1 \leftarrow \frac{R_1}{4}}
+        \myvec{1 & 0 & -7 \\ 0 & 1 & 5} \\
+	\implies \quad c_1 =-7, \ c_2 =5
+\end{align}
+Thus the equation of lines are
+\begin{align}
+	\myvec{4 & 5}\vec{x} = 5 \\
+	\myvec{3 & -2}\vec{x} = -7 
+\end{align}
+The angle between the lines can be expressed interms of normal vectors 
+\begin{align}
+	\vec{n_1}=\myvec{4\\5} , \quad \vec{n_2}=\myvec{3\\-2}
+\end{align}
+as
+\begin{align}
+	\cos\theta=\frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}} \\
+				\nonumber \\
+	\implies \quad \theta=\cos^{-1}({\frac{2}{\sqrt{533}}}) = \tan^{-1}(\frac{23}{2})
 \end{align}
 \begin{figure}[!h]
-	\includegraphics[width=\columnwidth]{lines.png}
+	\includegraphics[width=\columnwidth]{linespart2.png}
 	\caption{} \label{linefig1}
 \end{figure}
 \end{document}
