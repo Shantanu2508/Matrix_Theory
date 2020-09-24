@@ -142,38 +142,20 @@ Prove that the equation
 	12x^2 + 7xy -10y^2 +13x +45y -35 =0 
 \end{align*}
 represents two straight lines and find the angle between the lines.
-\section{Explanation}
-The general equation of second degree is given by
+\section{Solution}
+The above equation can be expressed as
 \begin{align}
-	ax^2 + 2bxy +cy^2 +2dx +2ey +f =0            \label{eq1}
-\end{align}
-and can be expressed as
-\begin{align}
-	\vec{x}^{T}\vec{Vx} + 2\vec{u}^{T}\vec{x} + f=0   \label{eq2}
+        \vec{x}^{T}\vec{Vx} + 2\vec{u}^{T}\vec{x} + f=0   \label{eq2}
 \end{align}
 where
-\begin{align}
-	\vec{V}=\vec{V}^T=\myvec{a & b \\ b & c}   \label{eq3}  \\
-	\vec{u}^T=\myvec{d &  e}            \label{eq4}
-\end{align}
-(\ref{eq1}) represents a pair of straight lines if
-\begin{align}
-	\mydet{\vec{V} & \vec{u} \\ \vec{u}^T & f} = 0     \label{eq5} 
-\end{align}
-The lines intercept if
-\begin{align}
-	\mydet{\vec{V}} < 0
-\end{align}
-
-\section{Solution}
-From (\ref{eq3}) and (\ref{eq4})
 \begin{align}
 	\vec{V}=\vec{V}^T &= \myvec{12 & \frac{7}{2} \\ \frac{7}{2} & -10} \\
 	\vec{u} &= \myvec{\frac{13}{2} \\ \frac{45}{2}} \\
 	 f=-35
-\end{align}
-From (\ref{eq1}) and (\ref{eq5})
+\end{align}	
+	(\ref{eq2}) represents a pair of straight lines if
 \begin{align}
+	&\mydet{\vec{V} & \vec{u} \\ \vec{u}^T & f} = 0     \label{eq5} \\
 	\mydet{\vec{V} & \vec{u} \\ \vec{u}^T & f} 
 		&= \mydet{12 & \frac{7}{2}  & \frac{13}{2} \\ 
 	        \frac{7}{2} & -10 & \frac{45}{2}     \\
@@ -182,7 +164,11 @@ From (\ref{eq1}) and (\ref{eq5})
 	\implies \ 12\mydet{-10 & \frac{45}{2} \\ \frac{45}{2} & -35} 
 		& -\frac{7}{2}\mydet{\frac{7}{2} & \frac{45}{2} \\ \frac{13}{2} & -35} 
 		+\frac{13}{2}\mydet{\frac{7}{2} & -10 \\ \frac{13}{2} & \frac{45}{2}} = 0 \label{eq10}\\
-	& \mydet{\vec{V}}=-\frac{529}{4} < 0 \label{eq11}
+\end{align}
+The lines intercept if
+\begin{align}
+        \mydet{\vec{V}} < 0
+ 	\mydet{\vec{V}}=-\frac{529}{4} < 0 \label{eq11}
 \end{align}
 From (\ref{eq10}) and (\ref{eq11}) it can be concluded that the given equation represents a pair of intersecting lines.
 Let the equations of lines be
