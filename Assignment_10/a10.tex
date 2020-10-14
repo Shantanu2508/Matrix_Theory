@@ -1,0 +1,230 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609 Assignment 10}
+\author{SHANTANU YADAV, EE20MTECH12001 }
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\section{Problem}
+If $\mathbb{F}$ is a field, verify that vector space of all ordered n-tuples $\mathbb{F}^n$ is a 
+vector space over the field $\mathbb{F}$.
+\section{Solution}
+Let $\mathbb{F}^n$ be a set of all ordered n-tuples over $\mathbb{F}$ i.e
+\begin{align}
+	\mathbb{F}^n= \{(a_1,a_2,\cdots,a_n) : a_1,a_2,\cdots,a_n \in \mathbb{F} \}
+\end{align}
+For $\mathbb{F}^n$ to be a vector space over $\mathbb{F}$ it must satisfy the closure property 
+of vector addition and scalar multiplication. \\
+{\bf Vector Addition in $\mathbb{F}^n$ :} \\
+Let $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n)$ and
+$\beta = (\beta_1,\beta_2,\cdots,\beta_n) \in \mathbb{F}^n$ then 
+\begin{align}
+	\alpha + \beta &= (\alpha_1,\alpha_2,\cdots,\alpha_n) + (\beta_1,\beta_2,\cdots,\beta_n) \\
+		       &= (\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) 
+\end{align}
+Since 
+\begin{align}
+	\alpha_i+\beta_i \in \mathbb{F} \ \forall \  i=1,2,\cdots,n \\
+	\implies \alpha+\beta \in \mathbb{F}^n
+\end{align}
+{\bf Scalar multiplication in $\mathbb{F}^n$ over $\mathbb{F}$ :} \\
+Let $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ and a $\in \mathbb{F}$ then
+\begin{align}
+	a\alpha=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)
+\end{align}
+Since
+\begin{align}
+	a\alpha_i \in \mathbb{F} \ \forall \ i=1,2\cdots,n \\
+	\implies a\alpha \in \mathbb{F}^n
+\end{align}
+{\bf Associativity of addition in $\mathbb{F}^n$ :} \\
+Let $\alpha=(\alpha_1,\alpha_2,\cdots,\alpha_n), \ \beta=(\beta_1,\beta_2,\cdots,\beta_n), 
+\ \gamma=(\gamma_1,\gamma_2,\cdots,\gamma_n) \in \mathbb{F}^n$ then
+\begin{align}
+	\alpha+(\beta+\gamma) &= (\alpha_1,\alpha_2,\cdots,\alpha_n) + (\beta_1+\gamma_1,\beta_2+\gamma_2,\cdots,\beta_n+\gamma_n) \\
+	&= (\alpha_1+\beta_1+\gamma_1,\alpha_2+\beta_2+\gamma_2,\cdots,\alpha_n+\beta_n+\gamma_n) \\
+	&= (\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) + (\gamma_1,\gamma_2,\cdots,\gamma_n) \\
+	&=(\alpha+\beta)+\gamma
+\end{align}
+{\bf Existence of additive identity in $\mathbb{F}^n$ :} \\
+We have $(0,0,\cdots,0) \in \mathbb{F}^n$
+and $\alpha=(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
+\begin{align}
+	(\alpha_1,\alpha_2,\cdots,\alpha_n)+(0,0,\cdots,0)&=(\alpha_1+0,\alpha_2+0,\cdots,\alpha_n+0) \\
+	&=(\alpha_1,\alpha_2,\cdots,\alpha_n) 
+\end{align}
+Therefore $(0,0,\cdots,0)$ is the additive identity in $\mathbb{F}^n$.\\
+{\bf Existence of additive inverse of each element of $\mathbb{F}^n$ :} \\
+If $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then $(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)
+\in \mathbb{F}^n$. Also we have
+\begin{align}
+	(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)+(\alpha_1,\alpha_2,\cdots,\alpha_n)&=(0,0,\cdots,0)
+\end{align}
+Therefore $(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)$ is the additive inverse of $(\alpha_1,\alpha_2,\cdots,\alpha_n)$.
+Thus $\mathbb{F}^n$ is an abelian group with respect to addition. \\
+\vfill
+Futher we observe that
+\begin{enumerate}
+	\item If a $\in \mathbb{F}$ and $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n), \ 
+		\beta = (\beta_1,\beta_2,\cdots,\beta_n) \in \mathbb{F}^n $ then
+		\begin{align}
+			a(\alpha+\beta)&=a(\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) \\
+			&=(a[\alpha_1+\beta_1],a[\alpha_2+\beta_2],\cdots,a[\alpha_n+\beta_n]) \\
+			&=(a\alpha_1+a\beta_1,a\alpha_2+a\beta_2,\cdots,a\alpha_n+a\beta_n) \\
+			&=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)+(a\beta_1,a\beta_2,\cdots,a\beta_n) \\
+			&=a(\alpha_1,\alpha_2,\cdots,\alpha_n)+a(\beta_1,\beta_2,\cdots,\beta_n) \\
+			&=a\alpha+a\beta
+		\end{align}
+	\item If a,b $\in \mathbb{F}$ and $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
+
+		\begin{align}
+			(a+b)\alpha&=([a+b]\alpha_1,[a+b]\alpha_2,\cdots,[a+b]\alpha_n) 
+		\end{align}
+		\begin{align}
+                        &=(a\alpha_1+b\alpha_1,a\alpha_2+b\alpha_2,\cdots,a\alpha_n+b\alpha_n) \\ 
+                        &=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)+(b\alpha_1,b\alpha_2,\cdots,b\alpha_n) \\
+                        &=a(\alpha_1,\alpha_2,\cdots,\alpha_n)+b(\alpha_1,\alpha_2,\cdots,\alpha_n) \\
+                        &=a\alpha+b\alpha
+		\end{align}
+	\item If a,b $\in \mathbb{F}$ and $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
+	\begin{align}
+		(ab)\alpha&=([ab]\alpha_1,[ab]\alpha_2,\cdots,[ab]\alpha_n) \\
+			  &=(a[b\alpha_1],a[b\alpha_2],\cdots,a[b\alpha_n]) \\
+			  &=a(b\alpha_1,b\alpha_2,\cdots,b\alpha_n) \\
+			  &=a(b\alpha)
+	\end{align}
+        \item If 1 is the unity element of $\mathbb{F}$ and $\alpha=(\alpha_1,\alpha_2,\alpha_n) \in 
+		\mathbb{F}^n$ then
+		\begin{align}
+			1\alpha &=(1\alpha_1,1\alpha_2,\cdots,1\alpha_n) \\
+			        &=(\alpha_1,\alpha_2,\cdots,\alpha_n) \\
+				&= \alpha
+		\end{align}
+\end{enumerate}
+Hence $\mathbb{F}^n$ is a vector space over $\mathbb{F}$.
+\end{document}
