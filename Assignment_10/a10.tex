@@ -131,100 +131,138 @@ columns=fullflexible
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \section{Problem}
-If $\mathbb{F}$ is a field, verify that vector space of all ordered n-tuples $\mathbb{F}^n$ is a 
-vector space over the field $\mathbb{F}$.
+If $\vec{F}$ is a field, verify that vector space of all ordered n-tuples $\vec{F}^n$ is a 
+vector space over the field $\vec{F}$.
 \section{Solution}
-Let $\mathbb{F}^n$ be a set of all ordered n-tuples over $\mathbb{F}$ i.e
+Let $\vec{F}^n$ be a set of all ordered n-tuples over $\vec{F}$ i.e
 \begin{align}
-	\mathbb{F}^n= \{(a_1,a_2,\cdots,a_n) : a_1,a_2,\cdots,a_n \in \mathbb{F} \}
+	\vec{F}^n= \cbrak{\myvec{\alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n} : 
+	\alpha_1, \alpha_2, \ldots, \alpha_n \in \vec{F} }
 \end{align}
-For $\mathbb{F}^n$ to be a vector space over $\mathbb{F}$ it must satisfy the closure property 
-of vector addition and scalar multiplication. \\
-{\bf Vector Addition in $\mathbb{F}^n$ :} \\
-Let $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n)$ and
-$\beta = (\beta_1,\beta_2,\cdots,\beta_n) \in \mathbb{F}^n$ then 
+For $\vec{F}^n$ to be a vector space over $\vec{F}$ it must satisfy the 
+closure property of vector addition and scalar multiplication. \\
+\\
+{\bf Vector Addition in $\vec{F}^n$ :} \\
+Let $\vec{\alpha} = \myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}$ and
+$\vec{\beta} = \myvec{\beta_1\\ \beta_2\\ \vdots\\ \beta_n} \in \vec{F}^n$ 
+then 
 \begin{align}
-	\alpha + \beta &= (\alpha_1,\alpha_2,\cdots,\alpha_n) + (\beta_1,\beta_2,\cdots,\beta_n) \\
-		       &= (\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) 
+	\vec{\alpha} + \vec{\beta} 
+	&=\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}
+	+\myvec{\beta_1\\ \beta_2\\ \vdots\\ \beta_n} \\
+	&=\myvec{\alpha_1+\beta_1\\ \alpha_2+\beta_2\\ \vdots\\ \alpha_n+\beta_n} 
 \end{align}
 Since 
 \begin{align}
-	\alpha_i+\beta_i \in \mathbb{F} \ \forall \  i=1,2,\cdots,n \\
-	\implies \alpha+\beta \in \mathbb{F}^n
+	\alpha_i+\beta_i \in \vec{F} \ \forall \  i=1,2,\cdots,n \\
+	\implies \vec{\alpha}+\vec{\beta} \in \vec{F}^n
 \end{align}
-{\bf Scalar multiplication in $\mathbb{F}^n$ over $\mathbb{F}$ :} \\
-Let $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ and a $\in \mathbb{F}$ then
+
+{\bf Scalar multiplication in $\vec{F}^n$ over $\vec{F}$ :} \\
+Let $\vec{\alpha} = \myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} 
+	\in \vec{F}^n$ and  $ a \in \vec{F}$ then
 \begin{align}
-	a\alpha=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)
+	a\vec{\alpha}=\myvec{a\alpha_1\\ a\alpha_2\\ \vdots\\ a\alpha_n}
 \end{align}
 Since
 \begin{align}
-	a\alpha_i \in \mathbb{F} \ \forall \ i=1,2\cdots,n \\
-	\implies a\alpha \in \mathbb{F}^n
+	a\alpha_i \in \vec{F} \ \forall \ i=1,2\cdots,n \\
+	\implies a\vec{\alpha} \in \vec{F}^n
 \end{align}
-{\bf Associativity of addition in $\mathbb{F}^n$ :} \\
-Let $\alpha=(\alpha_1,\alpha_2,\cdots,\alpha_n), \ \beta=(\beta_1,\beta_2,\cdots,\beta_n), 
-\ \gamma=(\gamma_1,\gamma_2,\cdots,\gamma_n) \in \mathbb{F}^n$ then
+\\
+{\bf Associativity of addition in $\vec{F}^n$ :} \\
+Let $\vec{\alpha}=\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}, \ 
+\vec{\beta}=\myvec{\beta_1\\ \beta_2\\ \vdots\\ \beta_n}, 
+\ \vec{\gamma}=\myvec{\gamma_1\\ \gamma_2\\ \vdots\\ \gamma_n} 
+\in \vec{F}^n$ then
 \begin{align}
-	\alpha+(\beta+\gamma) &= (\alpha_1,\alpha_2,\cdots,\alpha_n) + (\beta_1+\gamma_1,\beta_2+\gamma_2,\cdots,\beta_n+\gamma_n) \\
-	&= (\alpha_1+\beta_1+\gamma_1,\alpha_2+\beta_2+\gamma_2,\cdots,\alpha_n+\beta_n+\gamma_n) \\
-	&= (\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) + (\gamma_1,\gamma_2,\cdots,\gamma_n) \\
+	\vec{\alpha}+(\vec{\beta}+\vec{\gamma}) &= 
+	\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} + 
+      \myvec{\beta_1+\gamma_1\\ \beta_2+\gamma_2\\ \vdots\\ \beta_n+\gamma_n} \\
+	&= \myvec{\alpha_1+\beta_1+\gamma_1\\ \alpha_2+\beta_2+\gamma_2\\
+	\vdots\\ \alpha_n+\beta_n+\gamma_n} \\
+	&= \myvec{\alpha_1+\beta_1\\ \alpha_2+\beta_2\\ \vdots\\
+	\alpha_n+\beta_n} + \myvec{\gamma_1\\ \gamma_2\\ \vdots\\ \gamma_n} \\
 	&=(\alpha+\beta)+\gamma
 \end{align}
-{\bf Existence of additive identity in $\mathbb{F}^n$ :} \\
-We have $(0,0,\cdots,0) \in \mathbb{F}^n$
-and $\alpha=(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
+
+{\bf Existence of additive identity in $\vec{F}^n$ :} \\ 
+We have $\myvec{0\\ 0\\ \vdots\\ 0} \in \vec{F}^n$
+and $\alpha=\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \in \vec{F}^n$ then
 \begin{align}
-	(\alpha_1,\alpha_2,\cdots,\alpha_n)+(0,0,\cdots,0)&=(\alpha_1+0,\alpha_2+0,\cdots,\alpha_n+0) \\
-	&=(\alpha_1,\alpha_2,\cdots,\alpha_n) 
+	\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}
+	+\myvec{0\\ 0\\ \vdots\\ 0}
+	&=\myvec{\alpha_1+0\\ \alpha_2+0\\ \vdots\\ \alpha_n+0} \\
+	&=\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} 
 \end{align}
-Therefore $(0,0,\cdots,0)$ is the additive identity in $\mathbb{F}^n$.\\
-{\bf Existence of additive inverse of each element of $\mathbb{F}^n$ :} \\
-If $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then $(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)
-\in \mathbb{F}^n$. Also we have
+Therefore $\myvec{0\\ 0\\ \vdots\\ 0}$ is the additive identity in 
+$\vec{F}^n$.\\ \\
+{\bf Existence of additive inverse of each element of $\vec{F}^n$ :} \\
+If $\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \in \vec{F}^n$ then 
+$\myvec{-\alpha_1\\ -\alpha_2\\ \vdots\\ -\alpha_n} \in \vec{F}^n$. 
+Also we have
 \begin{align}
-	(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)+(\alpha_1,\alpha_2,\cdots,\alpha_n)&=(0,0,\cdots,0)
+	\myvec{-\alpha_1\\ -\alpha_2\\ \cdots\\ -\alpha_n}
+	+\myvec{\alpha_1\\ \alpha_2\\ \cdots\\ \alpha_n}
+	&=\myvec{0\\ 0\\ \vdots\\ 0}
 \end{align}
-Therefore $(-\alpha_1,-\alpha_2,\cdots,-\alpha_n)$ is the additive inverse of $(\alpha_1,\alpha_2,\cdots,\alpha_n)$.
-Thus $\mathbb{F}^n$ is an abelian group with respect to addition. \\
-\vfill
+Therefore $\myvec{-\alpha_1\\ -\alpha_2\\ \vdots\\ -\alpha_n}$ is the 
+additive inverse of $\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}$.
+Thus $\vec{F}^n$ is an abelian group with respect to addition. \\
+
 Futher we observe that
 \begin{enumerate}
-	\item If a $\in \mathbb{F}$ and $\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n), \ 
-		\beta = (\beta_1,\beta_2,\cdots,\beta_n) \in \mathbb{F}^n $ then
-		\begin{align}
-			a(\alpha+\beta)&=a(\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n) \\
-			&=(a[\alpha_1+\beta_1],a[\alpha_2+\beta_2],\cdots,a[\alpha_n+\beta_n]) \\
-			&=(a\alpha_1+a\beta_1,a\alpha_2+a\beta_2,\cdots,a\alpha_n+a\beta_n) \\
-			&=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)+(a\beta_1,a\beta_2,\cdots,a\beta_n) \\
-			&=a(\alpha_1,\alpha_2,\cdots,\alpha_n)+a(\beta_1,\beta_2,\cdots,\beta_n) \\
-			&=a\alpha+a\beta
-		\end{align}
-	\item If a,b $\in \mathbb{F}$ and $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
-
-		\begin{align}
-			(a+b)\alpha&=([a+b]\alpha_1,[a+b]\alpha_2,\cdots,[a+b]\alpha_n) 
-		\end{align}
-		\begin{align}
-                        &=(a\alpha_1+b\alpha_1,a\alpha_2+b\alpha_2,\cdots,a\alpha_n+b\alpha_n) \\ 
-                        &=(a\alpha_1,a\alpha_2,\cdots,a\alpha_n)+(b\alpha_1,b\alpha_2,\cdots,b\alpha_n) \\
-                        &=a(\alpha_1,\alpha_2,\cdots,\alpha_n)+b(\alpha_1,\alpha_2,\cdots,\alpha_n) \\
-                        &=a\alpha+b\alpha
-		\end{align}
-	\item If a,b $\in \mathbb{F}$ and $(\alpha_1,\alpha_2,\cdots,\alpha_n) \in \mathbb{F}^n$ then
-	\begin{align}
-		(ab)\alpha&=([ab]\alpha_1,[ab]\alpha_2,\cdots,[ab]\alpha_n) \\
-			  &=(a[b\alpha_1],a[b\alpha_2],\cdots,a[b\alpha_n]) \\
-			  &=a(b\alpha_1,b\alpha_2,\cdots,b\alpha_n) \\
-			  &=a(b\alpha)
-	\end{align}
-        \item If 1 is the unity element of $\mathbb{F}$ and $\alpha=(\alpha_1,\alpha_2,\alpha_n) \in 
-		\mathbb{F}^n$ then
-		\begin{align}
-			1\alpha &=(1\alpha_1,1\alpha_2,\cdots,1\alpha_n) \\
-			        &=(\alpha_1,\alpha_2,\cdots,\alpha_n) \\
-				&= \alpha
-		\end{align}
+\item If $a$ $\in \vec{F}$ and 
+	$\vec{\alpha} = \myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}, \
+	\vec{\beta}=\myvec{\beta_1\\ \beta_2\\ \vdots\\ \beta_n} \in \vec{F}^n$ 
+then
+\begin{align}
+	a(\vec{\alpha}+\vec{\beta}) &=
+	a\myvec{\alpha_1+\beta_1\\ \alpha_2+\beta_2\\ \vdots\\ 
+			\alpha_n+\beta_n} 
+\end{align}
+\begin{align}
+	&=\myvec{a[\alpha_1+\beta_1]\\ a[\alpha_2+\beta_2]\\ \vdots\\
+			a[\alpha_n+\beta_n]} \\
+	&=\myvec{a\alpha_1+a\beta_1\\ a\alpha_2+a\beta_2\\ \vdots\\ 
+			a\alpha_n+a\beta_n} \\
+	&\myvec{a\alpha_1\\ a\alpha_2\\ \vdots\\ a\alpha_n}
+	+ \myvec{a\beta_1\\ a\beta_2\\ \vdots\\ a\beta_n} \\
+	&=a\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}
+	+ a\myvec{\beta_1\\ \beta_2\\ \vdots\\ \beta_n} \\
+	&=a\alpha+a\beta
+\end{align}
+\item If $a$,$b$ $\in \vec{F}$ and 
+	$\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \in \vec{F}^n$ then
+\begin{align}
+	(a+b)\alpha
+	&=\myvec{[a+b]\alpha_1\\ [a+b]\alpha_2\\ \vdots\\ [a+b]\alpha_n} 
+\end{align}
+\begin{align}
+	&=\myvec{a\alpha_1+b\alpha_1\\ a\alpha_2+b\alpha_2\\ \vdots\\
+		a\alpha_n+b\alpha_n} \\ 
+	&=\myvec{a\alpha_1\\ a\alpha_2\\ \vdots\\ a\alpha_n}+
+		\myvec{b\alpha_1\\ b\alpha_2\\ \cdots,b\alpha_n} \\
+	&=a\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n}+
+		b\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \\
+	&=a\alpha+b\alpha
+\end{align}
+\item If $a$,$b$ $\in \vec{F}$ and 
+	$\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \in \vec{F}^n$ 
+then
+\begin{align}
+     (ab)\alpha&=\myvec{[ab]\alpha_1\\ [ab]\alpha_2\\ \vdots\\ [ab]\alpha_n} \\
+	  &=\myvec{a[b\alpha_1]\\ a[b\alpha_2]\\ \vdots\\ a[b\alpha_n]} \\
+	  &=a\myvec{b\alpha_1\\ b\alpha_2\\ \vdots\\ b\alpha_n} \\
+	  &=a(b\alpha)
+\end{align}
+\item If 1 is the unity element of $\vec{F}$ and 
+	$\alpha=\myvec{\alpha_1\\ \alpha_2\\ \alpha_n} \in \vec{F}^n$ then
+\begin{align}
+	1\alpha &=\myvec{1\alpha_1\\ 1\alpha_2\\ \vdots\\ 1\alpha_n} \\
+		&=\myvec{\alpha_1\\ \alpha_2\\ \vdots\\ \alpha_n} \\
+		&= \alpha
+\end{align}
 \end{enumerate}
-Hence $\mathbb{F}^n$ is a vector space over $\mathbb{F}$.
+Hence $\vec{F}^n$ is a vector space over $\vec{F}$.
 \end{document}
