@@ -155,7 +155,11 @@ Using row reduction on matrix $\vec{A}=\myvec{\alpha_1 & \alpha_2}$
 \begin{align}
 	\myvec{1 & 1+i \\ 0 & 1 \\ i & -1}
 	\xleftrightarrow[]{R_3 \leftarrow R_3-iR_1}
-	\myvec{1 & 1+i \\ 0 & 1 \\ 0 & -i}   \label{rrefA}
+	\myvec{1 & 1+i \\ 0 & 1 \\ 0 & -i}\\   
+	\xleftrightarrow[]{R_3 \leftarrow R_3+iR_2}
+	\myvec{1 & 1+i \\ 0 & 1 \\ 0 & 0}\\
+	\xleftrightarrow[]{R_1 \leftarrow R_1 - (i+1)R_2}
+	 \myvec{1 & 0 \\ 0 & 1 \\ 0 & 0} \label{rrefA}
 \end{align}
 Since $\vec{A}$ is a full-rank matrix the column vectors are linearly 
 independent. Therefore $S_1= \cbrak{ \alpha_1, \alpha_2 } $ is a basis set for 
@@ -211,9 +215,7 @@ Therefore $\beta_1  \in \ \vec{W}$.\\
                         \xleftrightarrow[]{R_1 \leftarrow R_1-(i+1)R_2}
                         \myvec{1 & 0 &  | & 2-i \\
                                0 & 1   &| & i \\
-                               0 & 0  & | & 0 }
-		\end{align}
-		\begin{align}
+                               0 & 0  & | & 0 } \\
                                \implies
                                \vec{x}=\myvec{2-i\\i}
 		\end{align}
@@ -236,7 +238,14 @@ Using row reduction on matrix $\vec{B}$
         \xleftrightarrow[]{R_2 \leftarrow R_2-R_1}
 	\myvec{1 & 1 \\
                0 & i-1 \\
-	       0 & 1+i}    \label{Binv}
+	       0 & 1+i}\\
+	\xleftrightarrow[]{R_2\leftarrow \frac{R_2}{i-1}}
+	\myvec{1 & 1 \\
+               0 & 1 \\
+               0 & 1+i}\\
+	\xleftrightarrow[R_3 \leftarrow R_3-(i-1)R_2]
+	{R_1 \leftarrow R_1 - R_2}
+	 \myvec{1 & 0 \\ 0 & 1 \\ 0 & 0} \label{Binv}
 \end{align}
 Since $\vec{B}$ is a full rank matrix the column vectors are linearly independent.\\
 Let $\alpha$ be any vector in the subspace $\vec{W}$, then it can be expressed as 
@@ -301,7 +310,9 @@ and now applying row reduction on (\ref{a2}) we get,
         \xleftrightarrow[]{R_2 \leftarrow \frac{R_2}{i-1}}
         \myvec{1 & 1 & | & 1+i \\
                0 & 1 & | & \frac{-1+i}{2} \\
-               0 & 1+i &| & -1}\\
+               0 & 1+i &| & -1}
+\end{align}
+\begin{align}
         \xleftrightarrow[]{R_3 \leftarrow R_3 - (i+1)R_2}
         \myvec{1 & 1 & | & 1+i \\
                0 & 1 & | & \frac{-1+i}{2} \\
