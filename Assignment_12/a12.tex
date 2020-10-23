@@ -171,55 +171,29 @@ $\vec{W}$.
 \end{align}
 		Since column vectors of $\vec{A}=\myvec{\alpha_1 & \alpha_2}$ are basis for $\vec{W}$ and if $\beta_1$ and $\beta_2 \ \in \vec{W}$ there exist a unique solution $\vec{x}$ such that
 \begin{align}
-	\myvec{\alpha_1 & \alpha_2}\vec{x}=\beta_1 
+	\myvec{\alpha_1 & \alpha_2}\vec{x}=\myvec{\beta_1 & \beta_2} 
 \end{align}
 Using row reduction on augmented matrix
 		\begin{align}
-			\myvec{1 & 1+i & | & 1 \\
-			       0 & 1   & | & 1 \\
-			       i & -1  & | & 0}\\
+			\myvec{1 & 1+i & | & 1 & 1\\
+			       0 & 1   & | & 1 & i\\
+			       i & -1  & | & 0 & 1+i}\\
 			\xleftrightarrow[]{R3 \leftarrow R_3-iR-1}
-			\myvec{1 & 1+i & | & 1 \\
-			       0 & 1   & | & 1 \\
-			       0 & -i  & | & -i}\\
-			\xleftrightarrow[]{R_3 \leftarrow R_3-R_2}
-			\myvec{1 & 1+i & | & 1 \\
-			       0 & 1   & | & 1 \\
-			       0 & 0  &  | & 0}\\
+			\myvec{1 & 1+i & | & 1 & 1\\
+			       0 & 1   & | & 1 & i\\
+			       0 & -i  & | & -i & 1}\\
+			\xleftrightarrow[]{R_3 \leftarrow R_3+iR_2}
+			\myvec{1 & 1+i & | & 1 & 1\\
+			       0 & 1   & | & 1 & i\\
+			       0 & 0  &  | & 0 & 0}\\
 			\xleftrightarrow[]{R_1 \leftarrow R_1-(i+1)R_2}
-			\myvec{1 & 0 &  | & -i \\
-			       0 & 1   &| & 1 \\
-			       0 & 0  & | & 0 }\\
+			\myvec{1 & 0 &  | & -i & 2-i\\
+			       0 & 1   &| & 1  & i\\
+			       0 & 0  & | & 0  & 0}\\
 			       \implies 
-			       \vec{x}=\myvec{-i\\1}
+			       \vec{x}=\myvec{-i & 2-i\\1 & i}
 		\end{align}
-Therefore $\beta_1  \in \ \vec{W}$.\\
-		Similarly for $\beta_2 \in \ \vec{W}$ there must exist a unique solution $\vec{x}$
-		such that
-		\begin{align}
-			\myvec{\alpha_2 & \alpha_2}\vec{x}=\beta_2
-		\end{align}
-		Using row reduction on augmented matrix 
-		\begin{align}
-			\myvec{1 & 1+i & | & 1 \\
-                               0 & 1   & | & i \\
-                               i & -1  & | & 1+i}\\
-                        \xleftrightarrow[]{R3 \leftarrow R_3-iR-1}
-                        \myvec{1 & 1+i & | & 1 \\
-                               0 & 1   & | & i \\
-                               0 & -i  & | & 1}\\
-                        \xleftrightarrow[]{R_3 \leftarrow R_3+iR_2}
-                        \myvec{1 & 1+i & | & 1 \\
-                               0 & 1   & | & i \\
-                               0 & 0  &  | & 0}\\
-                        \xleftrightarrow[]{R_1 \leftarrow R_1-(i+1)R_2}
-                        \myvec{1 & 0 &  | & 2-i \\
-                               0 & 1   &| & i \\
-                               0 & 0  & | & 0 } \\
-                               \implies
-                               \vec{x}=\myvec{2-i\\i}
-		\end{align}
-Therefore $\beta_2 \in \vec{W}$.\\
+Therefore $\beta_1$ and $\beta_2 \in \vec{W}$.\\
 Consider 
 \begin{align}
 	S_2=\cbrak{\beta_1,\beta_2}=\cbrak{\myvec{1\\1\\0},\myvec{1\\i\\1+i}}
@@ -271,58 +245,33 @@ is basis for $\vec{W}$.
 	Since $\alpha_1,\alpha_2 \in \ \vec{W}$ and $\cbrak{\beta_1,\beta_2}$ are ordered
 	basis for $\vec{W}$ there must exist unique value of $\vec{x}$ such that
 	\begin{align}
-		\myvec{\beta_1 & \beta_2}\vec{x}=\alpha_1 \label{a1}\\
-		\myvec{\beta_1 & \beta_2}\vec{x}=\alpha_2 \label{a2}
+		\myvec{\beta_1 & \beta_2}\vec{x}=\myvec{\alpha_1 & \alpha_2} \label{a1}
 	\end{align}
 Using row reduction on (\ref{a1}) we get,
 \begin{align}
-	\myvec{1 & 1 & | & 1 \\
-	       1 & i & | & 0 \\
-	       0 & 1+i &| & i}\\
+	\myvec{1 & 1 & | & 1 & 1+i\\
+	       1 & i & | & 0 & 1\\
+	       0 & 1+i &| & i & -1}\\
 	\xleftrightarrow[]{R_2 \leftarrow R_2-R_1}
-	\myvec{1 & 1 & | & 1 \\
-               0 & i-1 & | & -1 \\
-               0 & 1+i &| & i}\\
+	\myvec{1 & 1 & | & 1 & 1+i\\
+	       0 & i-1 & | & -1 & -i\\
+	       0 & 1+i &| & i & -1}\\
         \xleftrightarrow[]{R_2 \leftarrow \frac{R_2}{i-1}}
-	\myvec{1 & 1 & | & 1 \\
-	       0 & 1 & | & \frac{1+i}{2} \\
-               0 & 1+i &| & i}\\
+	\myvec{1 & 1 & | & 1 & 1+i\\
+	       0 & 1 & | & \frac{1+i}{2} & \frac{-1+i}{2}\\
+	       0 & 1+i &| & i & -1}\\
 	\xleftrightarrow[]{R_3 \leftarrow R_3 - (i+1)R_2}
-	\myvec{1 & 1 & | & 1 \\
-               0 & 1 & | & \frac{1+i}{2} \\
-               0 & 0 &| & 0}\\
+	\myvec{1 & 1 & | & 1 & 1+i\\
+	       0 & 1 & | & \frac{1+i}{2} & \frac{-1+i}{2} \\
+	       0 & 0 &| & 0 & 0}\\
 	\xleftrightarrow[]{R_1 \leftarrow R_2- R_1}
-	\myvec{1 & 0 & | & \frac{1-i}{2} \\
-               0 & 1 & | & \frac{1+i}{2} \\
-               0 & 0 &| & 0}\\
+	\myvec{1 & 0 & | & \frac{1-i}{2} & \frac{3+i}{2} \\
+	       0 & 1 & | & \frac{1+i}{2} & \frac{-1+i}{2}\\
+	       0 & 0 &| & 0 & 0}\\
 	\implies 
-	\vec{x}=\frac{1}{2}\myvec{1-i \\ 1+i}
+	\vec{x}=\frac{1}{2}\myvec{1-i & 3+i\\ 1+i & -1+i} \label{x}
 \end{align}
-and now applying row reduction on (\ref{a2}) we get,
-\begin{align}
-        \myvec{1 & 1 & | & 1+i \\
-	       1 & i & | & 1 \\
-               0 & 1+i &| & -1}\\
-        \xleftrightarrow[]{R_2 \leftarrow R_2-R_1}
-        \myvec{1 & 1 & | & 1+i \\
-               0 & i-1 & | & -i \\
-               0 & 1+i &| & -1}\\
-        \xleftrightarrow[]{R_2 \leftarrow \frac{R_2}{i-1}}
-        \myvec{1 & 1 & | & 1+i \\
-               0 & 1 & | & \frac{-1+i}{2} \\
-               0 & 1+i &| & -1}
-\end{align}
-\begin{align}
-        \xleftrightarrow[]{R_3 \leftarrow R_3 - (i+1)R_2}
-        \myvec{1 & 1 & | & 1+i \\
-               0 & 1 & | & \frac{-1+i}{2} \\
-               0 & 0 &| & 0}\\
-        \xleftrightarrow[]{R_1 \leftarrow R_2-R_1}
-        \myvec{1 & 0 & | & \frac{3+i}{2} \\
-               0 & 1 & | & \frac{-1+i}{2} \\
-               0 & 0 &| & 0}\\
-        \implies
-        \vec{x}=\frac{1}{2}\myvec{3+i \\ -1+i}
-\end{align}
+Thus the column vectors of (\ref{x}) are corresponding coordinates of $\alpha_1$ and $\alpha_2$ 
+in ordered basis $\cbrak{\beta_1,\beta_2}$.
 \end{enumerate}
 \end{document}
