@@ -132,6 +132,8 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 
 \section{Problem}
+\begin{enumerate}[label=\emph{\alph*)}]
+\item
 Let $\vec{F}$ be a field and let $\vec{V}$ be the space of polynomial functions $f$ from $\vec{F}$
 into $\vec{F}$, given by
 \begin{align*}
@@ -143,13 +145,17 @@ Let $\vec{D}$ be a linear differentiation transformation defined as
 \end{align*}
 Then find the range and null space of 
 $\vec{D}$.\\
+\item
 Let $\vec{R}$ be the field of real numbers and let $\vec{V}$ be the space of all functions from 
 $\vec{R}$ into $\vec{R}$ which are continous. Let $\vec{T}$ be linear transformation defined by
 \begin{align*}
 	(\vec{T}f)(x)=\int_{0}^{x} f(t)\,dt
 \end{align*}
 Find the range and null space of $\vec{T}$.
+\end{enumerate}
 \section{Explanation}
+\begin{enumerate}[label=\emph{\alph*)}]
+\item
 Let the vector space $\vec{V}$ be defined as 
 \begin{align}
 	\vec{V}=\cbrak{f:\vec{F}\rightarrow \vec{F} : f(x)=\sum_{k=0}^{n}c_kx^k, \ c_k \in \vec{F} }
@@ -170,6 +176,7 @@ where c is a constant. Such a polynomial is known as constant polynomial. Theref
 \begin{align}
 	\vec{N}=\cbrak{f=c : f \in \vec{V}, c \in \vec{F} \ \text{where c is a constant}}
 \end{align}
+\item
 Now consider the vector space defined as 
 \begin{align}
 	\vec{V}=\cbrak{f:\vec{R} \rightarrow \vec{R} : \text{f is continous}}
@@ -200,8 +207,10 @@ intergration transformation defined as
         \vec{T}f=0 \implies \int_{0}^{x}f(t)\,dt=0  \\
 	\implies f(t)=0
 \end{align}
+\\
 Therefore nullspace for integration transformation is
 \begin{align}
 	\vec{N}=\cbrak{0}
 \end{align}
+\end{enumerate}
 \end{document}
