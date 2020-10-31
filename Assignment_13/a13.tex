@@ -189,7 +189,7 @@ Therefore the $\vec{D}$ Transformation on the basis vector set is
 				      0 & 0 & 1 & \cdots & 0 & 0 \\
 				      \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
 				      0 & 0 & 0 & \cdots & 1 & 0 \\
-				      0 & 0 & 0 & \cdots & 0 & 1}
+				      0 & 0 & 0 & \cdots & 0 & 1}\\
 			      =\myvec{0 & 1 & 0 & \cdots & 0 & 0\\
 				      0 & 0 & 2 & \cdots & 0 & 0\\
 				      0 & 0 & 0 & \cdots & 0 & 0\\
@@ -206,7 +206,8 @@ Thus the $\vec{D}$ transformation coefficient matrix is
                  0 & 0 & 0 & \cdots & 0 & n-2 \\
                  0 & 0 & 0 & \cdots & 0 & 0}
 \end{align}
-The nullspace for differentiation transformation is defined as
+Since $D$ contains a zero row hence $\mydet{D}=0$. Therefore $\vec{D}$ transformation matrix is 
+singular. The nullspace for differentiation transformation is defined as
 \begin{align}
         \vec{N}=\cbrak{f \in \vec{V} : \vec{D}f=0} 
 \end{align}
@@ -259,7 +260,7 @@ Therefore the $\vec{T}$ Transformation on the basis vector set is
                                       0 & 0 & 1 & \cdots & 0 & 0 \\
                                       \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
                                       0 & 0 & 0 & \cdots & 1 & 0 \\
-                                      0 & 0 & 0 & \cdots & 0 & 1}
+                                      0 & 0 & 0 & \cdots & 0 & 1} \\
                               =\myvec{0 & 0 & 0 & \cdots & 0 & 0\\
                                       1 & 0 & 0 & \cdots & 0 & 0\\
 				      0 & \frac{1}{2} & 0 & \cdots & 0 & 0\\
@@ -278,6 +279,8 @@ Thus the $\vec{T}$ transformation coefficient matrix is
                                       0 & 0 & 0 & \cdots & \frac{1}{n-1} & 0 \\
                                       0 & 0 & 0 & \cdots & 0 & \frac{1}{n} } 
 \end{align}
+Since $T$ contains a zero row hence $\mydet{T}=0$. Therefore $\vec{T}$ transformation matrix is 
+singular.
 The nullspace for integration transformation is defined as
 \begin{align}
         \vec{N}=\cbrak{f \in \vec{V} : \vec{T}f=0}
