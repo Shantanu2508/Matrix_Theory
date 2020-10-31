@@ -154,67 +154,6 @@ $\vec{R}$ into $\vec{R}$ which are continous. Let $\vec{T}$ be linear transforma
 Find the range and null space of $\vec{T}$.
 \end{enumerate}
 \section{Explanation}
-\begin{enumerate}[label=\emph{\alph*)}]
-\item
-Let the vector space $\vec{V}$ be defined as 
-\begin{align}
-	\vec{V}=\cbrak{f:\vec{F}\rightarrow \vec{F} : f(x)=\sum_{k=0}^{n}c_kx^k, \ c_k \in \vec{F} }
-\end{align}
-Differentiation transformation is defined as a function which maps the vectors in $\vec{F}$ into $\vec{F}$ such that
-\begin{align}
-	(\vec{D}f)(x)=\frac{df(x)}{dx}\\
-	\implies 
-	\vec{D}f=\sum_{k=0}^{n}kc_kx^{k-1}=g(x)
-\end{align}
-Since $g(x) \in \vec{V}$ therefore the transformation  $\vec{D}$ is defined from $\vec{V}$ into $\vec{V}$. Thus the range of $\vec{D}$ is the entire vector space $\vec{V}$. Now consider the nullspace 
-for differentiation transformation defined as
-\begin{align}
-	\vec{N}=\cbrak{f \in \vec{V} : \vec{D}f=0} \\
-	\vec{D}f=0 \implies f=c
-\end{align}
-where c is a constant. Such a polynomial is known as constant polynomial. Therefore
-\begin{align}
-	\vec{N}=\cbrak{f=c : f \in \vec{V}, c \in \vec{F} \ \text{where c is a constant}}
-\end{align}
-\item
-Now consider the vector space defined as 
-\begin{align}
-	\vec{V}=\cbrak{f:\vec{R} \rightarrow \vec{R} : \text{f is continous}}
-\end{align}
-Integration transformation is defined as 
-\begin{align}
-	(\vec{T}f)(x)=\int_{0}^{x}f(t)\,dt
-\end{align}
-Let
-\begin{align}
-	F(x)=\int_{0}^{x}f(t)\,dt
-\end{align}
-Since f is continous function we have $\left\vert f(t) \right\vert \leq M$ $\forall \ t \in [0,x] $
-and $\left\vert M \right\vert \geq 0$, it follows that
-\begin{align}
-	\left\vert F(x+h) - F(x) \right\vert = 
-	\left\vert \int_{0}^{h} f(t)\,dt \right\vert \leq M\left\vert h \right\vert
-\end{align}
-which shows that F(x) is also continous and thus
-\begin{align}
-	F(x) \in \vec{V}
-\end{align}
-Therefore the transformation $\vec{T}$ is defined from $\vec{V}$ into $\vec{V}$. 
-Thus the range of $\vec{T}$ is the entire vector space $\vec{V}$. Now consider the nullspace for 
-intergration transformation defined as
-\begin{align}
-        \vec{N}=\cbrak{f \in \vec{V} : \vec{T}f=0} \\
-        \vec{T}f=0 \implies \int_{0}^{x}f(t)\,dt=0  \\
-	\implies f(t)=0
-\end{align}
-\\
-Therefore nullspace for integration transformation is
-\begin{align}
-	\vec{N}=\cbrak{0}
-\end{align}	
-\end{enumerate}
-
-\section{D and T Transformation Matrices for the Polynomial Vector Space}
 Let the vector space of n-dimension be deined as
 \begin{align}
         \vec{V}=\cbrak{f:\vec{F}\rightarrow \vec{F} : f(x)=\sum_{k=0}^{n}c_kx^k, \ c_k \in \vec{F} }
@@ -236,7 +175,13 @@ The $\vec{D}$ transformation maps the $k^{th}$ basis vector as follows
 		\begin{align}
 			\vec{D}\myvec{0\\\vdots\\0\\x^k\\\vdots\\0}
 			=\myvec{0\\\vdots\\kx^{k-1}\\0\\\vdots\\0}
-		\end{align}		
+		\end{align}
+Since the transformed vector 
+		\begin{align}
+			\myvec{0\\\vdots\\kx^{k-1}\\0\\\vdots\\0} \in \vec{V}
+		\end{align}
+the range of $\vec{D}$ is the vector space $\vec{V}$. Thus the transformation is defined as
+$\vec{D}:\vec{V} \rightarrow \vec{V}$.
 Therefore the $\vec{D}$ Transformation on the basis vector set is
 		\begin{align}
 			\vec{D}\myvec{1 & 0 & 0 & \cdots & 0 & 0\\
@@ -261,6 +206,33 @@ Thus the $\vec{D}$ transformation coefficient matrix is
                  0 & 0 & 0 & \cdots & 0 & n-2 \\
                  0 & 0 & 0 & \cdots & 0 & 0}
 \end{align}
+The nullspace for differentiation transformation is defined as
+\begin{align}
+        \vec{N}=\cbrak{f \in \vec{V} : \vec{D}f=0} 
+\end{align}
+		Let the coefficient matrix of $f \in \vec{V}$ be 
+		\begin{align}
+			\vec{f}=\myvec{c_0\\c_1\\\vdots\\c_{n-1}}
+		\end{align}
+		then
+		\begin{align}
+			\vec{D}f&=0 \\
+			\implies
+			&\myvec{0 & 1 & 0 & \cdots & 0 & 0\\
+                 0 & 0 & 2 & \cdots & 0 & 0\\
+                 0 & 0 & 0 & \cdots & 0 & 0\\
+                \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+                 0 & 0 & 0 & \cdots & 0 & n-2 \\
+		0 & 0 & 0 & \cdots & 0 & 0}\myvec{c_0\\c_1\\\vdots\\c_{n-1}}=\vec{0} \label{dx}
+		\end{align}
+Since $D$ is in row reduced echolon form and $rank(D)=n-1$ the solution of (\ref{dx}) is
+\begin{align}
+\vec{f}=\myvec{k\\0\\\vdots\\0}
+\end{align}
+where $k \in \vec{R}$. Therefore the nullspace for \\$\vec{D}:\vec{V}\rightarrow\vec{V}$ is
+\begin{align}
+	\vec{N}=\cbrak{\myvec{k\\0\\\vdots\\0}:k \in \vec{R}}
+\end{align}
 \item
 Let $f$ and $g \in \vec{V}$ and let $\alpha$ and $\beta \in \vec{F}$ then
 \begin{align}
@@ -274,6 +246,12 @@ The $\vec{T}$ transformation maps the $k^{th}$ basis vector as follows
       \vec{T}\myvec{0\\ \vdots \\ x^k \\0 \\ \vdots \\0}
       =\myvec{0\\ \vdots \\ 0\\ \frac{x^{k+1}}{k+1} \\ \vdots \\0}
 \end{align}
+Since the transformed vector
+\begin{align}
+	\myvec{0\\ \vdots \\ 0\\ \frac{x^{k+1}}{k+1} \\ \vdots \\0} \in \vec{V}
+\end{align}
+the range of $\vec{T}$ is the vector space $\vec{V}$. Thus the transformation is defined as 
+$\vec{T} : \vec{V}\rightarrow \vec{V}$.
 Therefore the $\vec{T}$ Transformation on the basis vector set is
                 \begin{align}
                         \vec{T}\myvec{1 & 0 & 0 & \cdots & 0 & 0\\
@@ -299,6 +277,35 @@ Thus the $\vec{T}$ transformation coefficient matrix is
                                       0 & 0 & 0 & \cdots & 0 & 0 \\
                                       0 & 0 & 0 & \cdots & \frac{1}{n-1} & 0 \\
                                       0 & 0 & 0 & \cdots & 0 & \frac{1}{n} } 
+\end{align}
+The nullspace for integration transformation is defined as
+\begin{align}
+        \vec{N}=\cbrak{f \in \vec{V} : \vec{T}f=0}
+\end{align}
+                Let the coefficient matrix of $f \in \vec{V}$ be
+                \begin{align}
+                        \vec{f}=\myvec{c_0\\c_1\\\vdots\\c_{n-1}}
+                \end{align}
+                then
+\begin{align}
+	&\vec{T}f=0 \\
+	\implies 
+	&\myvec{0 & 0 & 0 & \cdots & 0 & 0\\
+               1 & 0 & 0 & \cdots & 0 & 0\\
+               0 & \frac{1}{2} & 0 & \cdots & 0 & 0\\
+               \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+               0 & 0 & 0 & \cdots & 0 & 0 \\
+               0 & 0 & 0 & \cdots & \frac{1}{n-1} & 0 \\
+               0 & 0 & 0 & \cdots & 0 & \frac{1}{n} }
+	       \myvec{c_0\\c_1\\\vdots\\c_{n-1}}=\vec{0} \label{tx}
+\end{align}
+Since $T$ is in row reduced echolon form and $rank(T)=n$ the solution of (\ref{tx}) is
+\begin{align}
+\vec{f}=\myvec{0\\0\\\vdots\\0}
+\end{align}
+where $k \in \vec{R}$. Therefore the nullspace for \\$\vec{T}:\vec{V}\rightarrow\vec{V}$ is
+\begin{align}
+        \vec{N}=\cbrak{\myvec{0\\0\\\vdots\\0}:k \in \vec{R}}
 \end{align}
 \end{enumerate}
 \end{document}
