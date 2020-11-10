@@ -145,45 +145,43 @@ Prove that if $\vec{S}$ is a linear operator on $\vec{R}^2$ such that $\vec{S}^2
 then $\vec{S}=\vec{0}$, or $\vec{S}=\vec{I}$, or there is an ordered basis $\vec{B}$ for $\vec{R}^2$ 
 such that $[\vec{S}]_B=\vec{A}$.
 \section{Explanation}
-Let us consider a matrix $\vec{S}$ formed from the linear combination of columns of standard 
-ordred basis matrix $\vec{I}$ of $\vec{R}^2$ where 
+If a linear operator $\vec{S}$ is defined on $\vec{R}^2$ such that $\vec{S}^2=\vec{S}$, then
 \begin{align}
-	\vec{I}=\myvec{1&0\\0&1}
+	\vec{S}^2-\vec{S}=\vec{0}\\
+	\vec{S}(\vec{S}-\vec{I})=\vec{0}\\
+	\implies\vec{S}=\vec{0},\vec{S}=\vec{I}
 \end{align}
-and therefore,
+The transformation of a vector $\vec{x} \in \vec{R}^2$ can be represented as
 \begin{align}
-	\vec{S}&=\alpha\myvec{1\\0}+\beta\myvec{0\\1}\\
-	       &=\myvec{\alpha&0\\
-			0&\beta}
+	\vec{S}\vec{x}=\vec{y}\\
+	\implies \vec{S}(\vec{S}\vec{x})=\vec{S}\vec{y}\\
+	\implies \vec{S}^2\vec{x}=\vec{S}\vec{y}\\
+	\implies \vec{S}\vec{x}=\vec{S}\vec{y}\\
+	\implies \vec{x}=\vec{y}
 \end{align}
-Then,
+Therefore the transformation of a vector $\vec{x} \in \vec{R}^2$ can be given as
 \begin{align}
-	\vec{S}^2&=\myvec{\alpha&0\\
-			 0&\beta}\myvec{\alpha&0\\
-			 		0&\beta}\\
-		 &=\myvec{\alpha^2&0\\
-		 	    0&\beta^2}
+	\vec{S}\vec{x}=\vec{x} \ \forall \ \vec{x} \in \vec{R}^2 \label{sx}
 \end{align}
-From the question if $\vec{S}^2=\vec{S}$ then,
+Consider the ordered basis set
 \begin{align}
-	&\implies\vec{S}^2-\vec{S}=\vec{0} \\
-	&\implies\myvec{\alpha^2&0\\0&\beta^2}-\myvec{\alpha&0\\0&\beta}=\vec{0}\\
-	&\implies\myvec{\alpha(\alpha-1)&0\\0&\beta(\beta-1)}=\vec{0}
+        B=\cbrak{\epsilon_1,\epsilon_2} \in \vec{R}^2
 \end{align}
-Thus the solution set is
+and if
 \begin{align}
-	\myvec{\alpha\\\beta}=\cbrak{\myvec{0\\0},\myvec{1\\0},\myvec{0\\1},\myvec{1\\1}}
+\vec{[S]_B}=\vec{A} \\
+        \implies \vec{[S]_B}=\myvec{1&0\\0&0}
 \end{align}
-For $\myvec{\alpha\\\beta}=\myvec{0\\0}$ we get,
+Thus we can re-write the column vectors of $\vec{[S]_B}$ using (\ref{sx}) as
 \begin{align}
-	\vec{S}=\myvec{0&0\\0&0}=\vec{0}
+\vec{S}\myvec{1\\0}=\myvec{1\\0}=1\myvec{1\\0}+0\myvec{0\\1} \\
+\vec{S}\myvec{0\\0}=\myvec{0\\0}=0\myvec{1\\0}+0\myvec{0\\1}
 \end{align}
-For $\myvec{\alpha\\\beta}=\myvec{1\\1}$ we get,
+Therefore, any vector $\vec{x}$ in column space of $\vec{[S]_B}$ can be uniquely expressed by 
+$\cbrak{\myvec{1\\0}}$, hence it forms the basis for column space of $\vec{[S]_B}$. Therefore 
+one of the basis vector of $B$ is $\myvec{1\\0}$. The other basis vector can be any vector which 
+is linearly independent to $\myvec{1\\0}$. One of the ordered basis set can be 
 \begin{align}
-	\vec{S}=\myvec{1&0\\0&1}=\vec{I}
-\end{align}
-For $\myvec{\alpha\\\beta}=\myvec{1\\0}$ we get,
-\begin{align}
-        \vec{S}=\myvec{1&0\\0&0}=\vec{A}
+	B=\cbrak{\myvec{1\\0},\myvec{1\\1}}
 \end{align}
 \end{document}
