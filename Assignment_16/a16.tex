@@ -155,16 +155,11 @@ Consider $C \in \vec{W}$ such that $C=AB-BA$ where $A,B \in \vec{R}^{N\times N}$
                  \vdots&\vdots&\cdots&\vdots\\
                  b_{N1}&b_{N2}&\cdots&b_{NN}}
 \end{align}
-Then 
+Since 
 \begin{align}
-	trace(AB)&=\sum_{i=1}^N(AB)_{ii}\\
-		 &=\sum_{i=1}^{N}\sum_{k=1}^{N}A_{ik}B_{ki}\\
-		 &=\sum_{i=1}^{N}\sum_{k=1}^{N}B_{ki}A_{ik}\\
-		 &=\sum_{k=1}^{N}\sum_{i=1}^{N}B_{ki}A_{ik}\\
-		 &=\sum_{k=1}^{N}(BA)_{kk}\\
-		 &=trace(BA)\\
-		 &\implies trace(AB)-trace(BA)=0\\
-		 &\implies trace(C)=0
+	&trace(AB)=trace(BA)\\
+	&\implies trace(AB)-trace(BA)=0\\
+	&\implies trace(C)=0
 \end{align}
 Thus any linear combination of matrices $C=AB-BA$ represents the subspace of all $N\times N$ matrices  with trace equal to 0. Hence, the subspace $\vec{W}_0$ and $\vec{W}_1$ are equivalent.
 \end{document}
