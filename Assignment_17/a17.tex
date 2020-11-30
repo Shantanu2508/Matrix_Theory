@@ -132,38 +132,21 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 
 \section{Problem}
-Let $f:[-1,1]\rightarrow \vec{R}$ be a function given by
-\begin{align*}
-%       P_{\theta}(\theta)= \lcbrak{\frac{1}{2\pi}; \ 0\leq \theta \leq 2\pi \\
-%                                   0 ; otherwise}
-	f(x) =
-        \begin{cases}
-		x^2\cos\brak{\frac{1}{x}} \ x\neq 0 \\
-                                   0 \ x=0
-        \end{cases}
-\end{align*}
-Then
+Let m,n,r be natural numbers. Let $A$ be a $m\times n$ matrix with real entries such that
+$\brak{AA^T}^r=I$, where $I$ is the $m \times m$ identity marix and $A^T$ is the transpose of the 
+matrix $A$. We conclude that
 \begin{enumerate}
-	\item f is of bounded variation on [-1,1]
-	\item f' is of bounded variation on [-1,1]
-	\item $\abs{f'(x)} \leq$ 1 $\forall x \in [-1,1]$
-	\item $\abs{f'(x)} \leq$ 3 $\forall x \in [-1,1]$
+	\item $m=n$
+	\item $AA^T$ is invertible
+	\item $A^TA$ is invertible
+	\item if $m=n$, then $A$ is invertible.
 \end{enumerate}
 \section{Explanation}
-We know that
+Since $A$ is a $m\times n$ matrix, $AA^T$ is $m\times m$ matrix. Also since,
 \begin{align}
-	-1\leq \cos \brak{\frac{1}{x}} \leq 1 \\
-	\implies -x^2 \leq x^2\cos\brak{\frac{1}{x}} \leq x^2  \label{eq1}
+	\brak{AA^T}^r=I \\
+	\implies \brak{AA^T}\brak{AA^T}^{r-1}=I \\
+	\implies \brak{AA^T}^{-1}=\brak{AA^T}^{r-1}
 \end{align}
-But since $ x \in [-1,1]$
-\begin{align}
-	-1 \leq x^2\cos\brak{\frac{1}{x}} \leq 1
-\end{align}
-Upon differentiating (\ref{eq1}) we get
-\begin{align}
-	-2x\leq f' \leq 2x \\
-	\implies -2 \leq f' \leq 2\\
-	\implies \abs{f'}\leq 2 \quad \forall x \in [-1,1]
-\end{align}
-Thus f is of bounded variation on [-1,1].
+Hence $AA^T$ is invertible with inverse equal to $\brak{AA^T}^{r-1}$. Therefore option (2) is correct.
 \end{document}
