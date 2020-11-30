@@ -132,21 +132,40 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 
 \section{Problem}
-Let m,n,r be natural numbers. Let $A$ be a $m\times n$ matrix with real entries such that
-$\brak{AA^T}^r=I$, where $I$ is the $m \times m$ identity marix and $A^T$ is the transpose of the 
-matrix $A$. We conclude that
+Let $\vec{A}$ be a $n\times n$ real matrix with $\vec{A}^2=\vec{A}$. Then
 \begin{enumerate}
-	\item $m=n$
-	\item $AA^T$ is invertible
-	\item $A^TA$ is invertible
-	\item if $m=n$, then $A$ is invertible.
+	\item the eigenvalues of $\vec{A}$ are either 0 or 1
+	\item $\vec{A}$ is a diagonal matrix with diagonal entries 0 or 1
+	\item $rank(\vec{A})=trace(\vec{A})$
+	\item if $rank(\vec{I-A})=trace(\vec{I-A})$
 \end{enumerate}
 \section{Explanation}
-Since $A$ is a $m\times n$ matrix, $AA^T$ is $m\times m$ matrix. Also since,
+Since
 \begin{align}
-	\brak{AA^T}^r=I \\
-	\implies \brak{AA^T}\brak{AA^T}^{r-1}=I \\
-	\implies \brak{AA^T}^{-1}=\brak{AA^T}^{r-1}
+	\vec{A}^2=\vec{A} \\
+	\implies \vec{A}^2-\vec{A}=\vec{O}
 \end{align}
-Hence $AA^T$ is invertible with inverse equal to $\brak{AA^T}^{r-1}$. Therefore option (2) is correct.
+From Cayley-Hamilton Theorem we have,
+\begin{align}
+	\lambda^2-\lambda=0 \\
+	\implies \lambda\brak{\lambda-1}=0 \\
+	\implies \lambda=0,1
+\end{align}
+Such a matrix with the property that $\vec{A}^2=\vec{A}$ is an idempotent matrix with eigen values 
+equal to 0 or 1. For such a matrix 
+\begin{align}
+	rank(A)=trace(A)
+\end{align}
+Now for the matrix $\vec{I}-\vec{A}$ we have,
+\begin{align}
+	\brak{\vec{I}-\vec{A}}^2=\brak{\vec{I}-\vec{A}}\brak{\vec{I}-\vec{A}}\\
+	\implies \vec{I}^2-\vec{IA}-\vec{AI}+\vec{A}^2 \\
+	\implies \vec{I}-\vec{A}-\vec{A}+\vec{A} \\
+	\implies \vec{I}-\vec{A}
+\end{align}
+Hence $\vec{I}-\vec{A}$ is an idempotent matrix. Therefore we conclude,
+\begin{align}
+	rank(\vec{I}-\vec{A})=trace(\vec{I}-\vec{A})
+\end{align}
+Thus, options (1),(3) and (4) are correct.
 \end{document}
