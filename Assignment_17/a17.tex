@@ -140,32 +140,39 @@ Let $\vec{A}$ be a $n\times n$ real matrix with $\vec{A}^2=\vec{A}$. Then
 	\item if $rank(\vec{I-A})=trace(\vec{I-A})$
 \end{enumerate}
 \section{Explanation}
-Since
-\begin{align}
-	\vec{A}^2=\vec{A} \\
-	\implies \vec{A}^2-\vec{A}=\vec{O}
-\end{align}
+\begin{table}[htbp]
+        \centering
+	\begin{tabular}{|m{2.0in}|m{5.0in}|} \hline
+		\textbf{Objective} & \textbf{Explanation} \\ \hline
+		Eigenvalues of $\vec{A}$ & Since 
+		\begin{align}
+			\vec{A}^2=\vec{A} \\
+		        \implies \vec{A}^2-\vec{A}=\vec{O}
+		\end{align} 
 From Cayley-Hamilton Theorem we have,
 \begin{align}
-	\lambda^2-\lambda=0 \\
-	\implies \lambda\brak{\lambda-1}=0 \\
-	\implies \lambda=0,1
-\end{align}
-Such a matrix with the property that $\vec{A}^2=\vec{A}$ is an idempotent matrix with eigen values 
+        \lambda^2-\lambda=0 \\
+        \implies \lambda\brak{\lambda-1}=0 \\
+        \implies \lambda=0,1
+\end{align} \\ \hline
+		Relation between rank and trace of $\vec{A}$ & A matrix $\vec{A}$ satisfying $\vec{A}^2=\vec{A}$ is an idempotent matrix with eigen values      
 equal to 0 or 1. For such a matrix 
 \begin{align}
-	rank(A)=trace(A)
-\end{align}
-Now for the matrix $\vec{I}-\vec{A}$ we have,
+        rank(A)=trace(A)
+\end{align} \\ \hline
+Relation between rank and trace of $\vec{I}-\vec{A}$ & Now for the matrix $\vec{I}-\vec{A}$ we have,
 \begin{align}
-	\brak{\vec{I}-\vec{A}}^2=\brak{\vec{I}-\vec{A}}\brak{\vec{I}-\vec{A}}\\
-	\implies \vec{I}^2-\vec{IA}-\vec{AI}+\vec{A}^2 \\
-	\implies \vec{I}-\vec{A}-\vec{A}+\vec{A} \\
-	\implies \vec{I}-\vec{A}
+	\brak{\vec{I}-\vec{A}}^2 = \brak{\vec{I}-\vec{A}}\brak{\vec{I}-\vec{A}}\\
+	= \vec{I}^2-\vec{IA}-\vec{AI}+\vec{A}^2 \\
+	= \vec{I}-\vec{A}-\vec{A}+\vec{A} \\
+	= \vec{I}-\vec{A}
 \end{align}
 Hence $\vec{I}-\vec{A}$ is an idempotent matrix. Therefore we conclude,
 \begin{align}
-	rank(\vec{I}-\vec{A})=trace(\vec{I}-\vec{A})
-\end{align}
+        rank(\vec{I}-\vec{A})=trace(\vec{I}-\vec{A})
+\end{align} \\ \hline
+        \end{tabular}
+        \caption{} \label{coeftable}
+\end{table}
 Thus, options (1),(3) and (4) are correct.
 \end{document}
