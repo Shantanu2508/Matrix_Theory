@@ -140,6 +140,7 @@ Let $\vec{A}$ be a $n\times n$ real matrix with $\vec{A}^2=\vec{A}$. Then
 	\item if $rank(\vec{I-A})=trace(\vec{I-A})$
 \end{enumerate}
 \section{Explanation}
+See next page.
 \begin{table}[htbp]
         \centering
 	\begin{tabular}{|m{2.0in}|m{5.0in}|} \hline
@@ -154,10 +155,22 @@ From Cayley-Hamilton Theorem we have,
         \lambda^2-\lambda=0 \\
         \implies \lambda\brak{\lambda-1}=0 \\
         \implies \lambda=0,1
-\end{align} \\ \hline
-		Relation between rank and trace of $\vec{A}$ & A matrix $\vec{A}$ satisfying $\vec{A}^2=\vec{A}$ is an idempotent matrix with eigen values      
-equal to 0 or 1. Rank of matrix is defined as the number of non-zero eigenvalues. Since number of non-zero matrix is 1,  
-\begin{align}
+\end{align} 
+	A matrix $\vec{A}$ satisfying $\vec{A}^2=\vec{A}$ is an idempotent matrix with eigen values
+equal to 0 or 1. 	\\ \hline
+Check if $\vec{A}$ is necessary diagonal & Consider
+                \begin{align}
+                        \vec{A}=\myvec{1&-1\\0&0}\\
+                \end{align}
+                Then,
+                \begin{align}
+                        \vec{A}^2=\myvec{1&-1\\0&0}\myvec{1&-1\\0&0}\\
+                        =\myvec{1&-1\\0&0} \\
+                        =\vec{A}
+                \end{align}
+                Hence $\vec{A}$ is idempotent but not diagonal. \\ \hline
+Relation between rank and trace of $\vec{A}$ & Rank of matrix is defined as the number of non-zero eigenvalues. Since number of non-zero eigenvalues is 1,  
+\begin{align} 
 	rank(\vec{A})=1 \\
 	trace(\vec{A})=\sum_i \lambda_i = 0+1 =1 \\
 	\implies rank(\vec{A})=trace(\vec{A})
@@ -173,22 +186,6 @@ Hence $\vec{I}-\vec{A}$ is an idempotent matrix. Therefore we conclude,
 \begin{align}
         rank(\vec{I}-\vec{A})=trace(\vec{I}-\vec{A})
 \end{align} \\ \hline
-		Diagonalizibility of $\vec{A}$ & Since the characteristic equation of $\vec{A}$ is
-		\begin{align}
-			f(\lambda)=\lambda \brak{\lambda-1}=0
-		\end{align}
-		and since the matrix $\vec{A}$ satisfies its charateristic equation such that
-		\begin{align}
-			f(\vec{A})=\vec{0}
-		\end{align}
-		so $f$ annhiliates $\vec{A}$ and the minimal polynomial of the charateristic equation
-		is
-		\begin{align}
-			m(\lambda)=\lambda \brak{\lambda-1}
-		\end{align}
-		Since the roots of $m(\lambda)$ are distinct we can conclude that $\vec{A}$ is 
-		diagonalizable.\\
-		\hline
 		Answer& (1),(3) and (4) \\ \hline
         \end{tabular}
         \caption{} \label{1}
