@@ -1,0 +1,233 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate,float}
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609 Assignment 18}
+\author{SHANTANU YADAV, EE20MTECH12001 }
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+%\renewcommand{\thetable}{\theenumi}
+
+\section{Problem}
+Let $\vec{M}$ be a $n\times n$ Hermitian matrix of rank $k,k\neq n$. If $\lambda\neq 0$ is
+an eigenvalue of $\vec{M}$ with corresponding unit column vector $\vec{u}$,
+with $\vec{Mu}=\lambda\vec{u}$ then which of the following are true?
+\begin{enumerate}
+	\item $rank\brak{\vec{M}-\lambda\vec{uu^*}}=k-1$
+	\item $rank\brak{\vec{M}-\lambda\vec{uu^*}}=k$
+	\item $rank\brak{\vec{M}-\lambda\vec{uu^*}}=k+1$
+	\item $\brak{\vec{M}-\lambda\vec{uu^*}}^n=\vec{M}^n-\lambda^n\vec{uu^*}$
+\end{enumerate}
+
+\section{Explanation}
+
+\begin{table}[htbp]
+        \centering
+	\begin{tabular}{|m{2.0in}|m{5.0in}|} \hline
+		\textbf{Objective} & \textbf{Explanation} \\ \hline
+	Rank of $\vec{M}-\lambda \vec{uu^*}$ & Since 
+	\begin{align}
+	rank\brak{\vec{A}-\vec{B}} \geq rank\brak{\vec{A}}-rank\brak{\vec{B}} \\
+		\implies rank\brak{\vec{M}-\lambda\vec{uu^*}} \geq 
+	rank\brak{\vec{M}}-rank\brak{\vec{uu^*}} \\
+		\implies rank\brak{\vec{M}-\lambda\vec{uu^*}} \geq k-rank\brak{\vec{uu^*}}
+	\end{align} 
+If $\vec{A}$ is a non-zero column vector of order $m\times 1$ and $\vec{B}$ is a non-zero row vector 
+of order $1\times n$ then $rank\brak{AB}=1$. So,
+	\begin{align}
+	rank\brak{\vec{uu^*}}=1 \\
+	\implies rank\brak{\vec{M}-\lambda\vec{uu^*}} \geq k-1 \label{eq1}
+	\end{align}
+Also since,
+	\begin{align}
+	\vec{M}-\lambda\vec{uu^*} = \vec{M}-\vec{Muu^*}=\vec{M}\brak{I-\vec{uu^*}}
+	\end{align}
+and
+	\begin{align}
+	rank\brak{\vec{M}\brak{\vec{I}-\vec{uu^*}}}
+	\leq min\brak{rank\brak{\vec{M}},rank\brak{\vec{I}-\vec{uu^*}}} \\
+	\implies
+	rank\brak{\vec{M}\brak{\vec{I}-\vec{uu^*}}} \leq k \label{eq2}
+	\end{align}
+Thus we have from (\ref{eq1}) and (\ref{eq2}) that
+	\begin{align}
+	rank\brak{\vec{M}-\lambda\vec{uu^*}} = k-1 \ \text{or} \ k
+	\end{align}
+	Consider a matrix 
+	\begin{align}
+		\vec{M}=\myvec{1&0\\0&0}
+	\end{align}
+\end{tabular}
+\end{table}
+
+\clearpage
+\begin{table}[htbp]
+        \centering
+\begin{tabular}{|m{2.0in}|m{5.0in}|} \hline
+		\textbf{Objective} & \textbf{Explanation} \\ \hline
+		&
+	such that $rank\brak{M}=1$. The eigenvalue of $\vec{M}$ is $\lambda=1$ 
+	and the corresponding eigenvector is
+	\begin{align}
+	\vec{u}=\myvec{1\\0}
+	\end{align}
+	Thus we have,
+	\begin{align}
+	\vec{M}-\lambda\vec{uu^*}=\myvec{1&0\\0&0}-\myvec{1\\0}\myvec{1&0} \\
+		=\myvec{1&0\\0&0}-\myvec{1&0\\0&0} \\
+		=\myvec{0&0\\0&0} \\
+		\implies rank\brak{\vec{M}-\lambda\vec{uu^*}}=0
+	\end{align}
+Hence if $rank\brak{\vec{M}}=k$ 
+		then $rank\brak{\vec{M}-\lambda\vec{uu^*}}=k-1$. \\ 
+		& \\ \hline
+	$\brak{\vec{M}-\lambda\vec{uu^*}}^n=\vec{M}^n-\lambda^n\vec{uu^*}$  & 
+		Let the given statement be 
+	P(n):$\brak{\vec{M}-\lambda\vec{uu^*}}^n=\vec{M}^n-\lambda^n\vec{uu^*}$.
+		It can be seen that P(1) is true. Assume P(n) is true for some 
+		$k\in \vec{N}$ such that
+	\begin{align}
+	\brak{\vec{M}-\lambda\vec{uu^*}}^k=\vec{M}^k-\lambda^k\vec{uu^*}
+	\end{align}
+	Now to prove that P(k+1) is true we have
+	\begin{align}
+	\brak{\vec{M}-\lambda\vec{uu^*}}^{k+1}
+	=\brak{\vec{M}-\lambda\vec{uu^*}}\brak{\vec{M}-\lambda\vec{uu^*}}^k \\
+	=\brak{\vec{M}-\lambda\vec{uu^*}}\brak{\vec{M}^k-\lambda^k\vec{uu^*}} \\
+	=\vec{M}^{k+1}-\lambda^k\vec{Muu^*}-\lambda\vec{M}^k\vec{uu^*} + 
+		\lambda^{k+1}\vec{uu^*uu^*} \\
+	=\vec{M}^{k+1}-\lambda^{k+1}\vec{uu^*}-\lambda^{k+1}\vec{uu^*} +
+		\lambda^{k+1}\vec{u}\norm{\vec{u}}^2\vec{u}^* \\
+	=\vec{M}^{k+1}-2\lambda^{k+1}\vec{uu^*}+\lambda^{k+1}\vec{uu^*} \\
+	=\vec{M}^{k+1}-\lambda^{k+1}\vec{uu^*}
+	\end{align}
+	Hence, by the Principle of Mathematical Induction P(n) is true for all 
+	$n$.\\ \hline
+		Answer& (1) and (4) \\ \hline
+\end{tabular}
+        \caption{} \label{1}
+\end{table}
+\end{document}
